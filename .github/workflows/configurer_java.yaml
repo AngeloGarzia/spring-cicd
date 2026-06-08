@@ -4,8 +4,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  affichage:
+  configurer:
     runs-on: ubuntu-latest
+
     steps:
       - name: Récupérer le code source
         uses: actions/checkout@v4
