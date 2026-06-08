@@ -1,5 +1,4 @@
 name: Exemple Bonjour
-run-name: Exemple Bonjour
 
 on:
   push:
@@ -9,7 +8,13 @@ jobs:
   dire-bonjour:
     runs-on: ubuntu-latest
     steps:
+      - name: Récupérer le code source
+        uses: actions/checkout@v4
+
       - name: Afficher Bonjour
         run: echo "Bonjour depuis GitHub Actions !"
+
+      - name: Lister les fichiers du runner
+        run: ls -la
 
 
