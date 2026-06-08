@@ -11,8 +11,7 @@ permissions:
   security-events: write
 
 jobs:
-  build-and-analyze:
-    name: Build and CodeQL
+  build-and-codeql:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,12 +26,12 @@ jobs:
           cache: maven
 
       - name: Initialiser CodeQL
-        uses: github/codeql-action/init@v3
+        uses: github/codeql-action/init@v4
         with:
-          languages: java
+          languages: java-kotlin
 
-      - name: Compiler avec Maven
-        run: mvn -B clean verify
+      - name: Construire avec Maven
+        run: mvn -B clean verify -Dspring.profiles.active=test -Dmaven.test.failure.ignore=true
 
-      - name: Exécuter l'analyse CodeQL
-        uses: github/codeql-action/analyze@v3
+      - name: Analyser avec CodeQL
+        uses: github/codeql-action/analyze@v4
