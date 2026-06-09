@@ -1,0 +1,28 @@
+<!--
+    Checkstyle configuration that checks the Google coding conventions from Google Java Style
+    that can be found at https://google.github.io/styleguide/javaguide.html
+
+    Checkstyle is very configurable. Be sure to read the documentation at
+    http://checkstyle.org (or in your downloaded distribution).
+
+    To completely disable a check, just comment it out or delete it from the file.
+    To suppress certain violations please review suppression filters.
+
+    Authors: Max Vetrenko, Ruslan Diachenko, Roman Ivanov.
+  -->
+<module name="Checker">
+    <property name="charset" value="UTF-8"/>
+
+    <module name="TreeWalker">
+        <module name="NeedBraces"/>
+        <module name="LeftCurly"/>
+        <module name="WhitespaceAfter"/>
+        <module name="WhitespaceAround"/>
+        <module name="Indentation"/>
+        <module name="EmptyBlock"/>
+        <module name="MethodName"/>
+        <module name="TypeName"/>
+        <module name="PackageName"/>
+        <module name="NoFinalizer"/>
+    </module>
+</module>
